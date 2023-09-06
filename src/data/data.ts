@@ -54,7 +54,8 @@ export const data = {
                 png: ramsesmironPng,
                 webp: ramsesmironWebp
               },
-              username: "ramsesmiron"
+              username: "ramsesmiron",
+              replies: [],
             }
           },
           {
@@ -68,7 +69,8 @@ export const data = {
                 png: juliusomoPng,
                 webp: juliusomoWebp
               },
-              username: "juliusomo"
+              username: "juliusomo",
+              replies: [],
             }
           }
         ]
