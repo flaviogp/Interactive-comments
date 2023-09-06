@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import {Data, Comment} from "../../interfaces/interfaces";
 import ChatContainer from "../ChatContainer";
 import ChatFooter from "../ChatFooter";
@@ -7,14 +7,15 @@ interface MainProps {
     data: Data
 }
 export default function Main({data}: MainProps){
-    const [commentsData, setCommentsData] = useState<Data>(JSON.parse(localStorage.getItem('data') as string));
+    // const [commentsData, setCommentsData] = useState<Data>(JSON.parse(localStorage.getItem('data') as string));
+    const [commentsData, setCommentsData] = useState<Data>(data);
 
 
-    useEffect(()=>{
-        localStorage.getItem('data') === null ?
-            localStorage.setItem('data', JSON.stringify(data)):
-            localStorage.setItem('data', JSON.stringify(commentsData))
-    },[commentsData, data])
+    // useEffect(()=>{
+    //     localStorage.getItem('data') === null ?
+    //         localStorage.setItem('data', JSON.stringify(data)):
+    //         localStorage.setItem('data', JSON.stringify(commentsData))
+    // },[commentsData, data])
 
     const setScore = (e: React.MouseEvent<HTMLSpanElement>, commentId: number, fatherId?:number) => {
         e.preventDefault();
