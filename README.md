@@ -42,7 +42,7 @@ This is a solution to the [Interactive Comments Section Main](https://www.fronte
 
 <h2 align="center">Links</h2>
 
-- Solution URL:  [Interactive Comments Section Main (React, TypeScript | Front End Mentor)](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9)
+- Solution URL:  [Interactive Comments Section Main (React, TypeScript | Front End Mentor)](https://www.frontendmentor.io/solutions/interactive-comments-section-using-reactjs-typescript-XAGLJKbCck)
 - Live Site URL: [ Click here ](https://monumental-kleicha-5b3aef.netlify.app/)
 
 <br>
