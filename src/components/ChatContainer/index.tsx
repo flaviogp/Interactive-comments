@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Comment, Data } from "../../interfaces/interfaces"
 import Message from '../Message'
 
@@ -15,10 +16,10 @@ export default function ChatContainer({data, setScore, deleteComment, createComm
         <div className="chat-container">
             {
             data.comments
-                .map(comment => {
+                .map((comment) => {
                     return(
-                        <>
-                            <Message key={comment.id} 
+                        <Fragment key={comment.id}>
+                            <Message 
                                 commentInfo={comment} 
                                 data={data}
                                 setScore={setScore}
@@ -31,8 +32,8 @@ export default function ChatContainer({data, setScore, deleteComment, createComm
                                 comment.replies.map(replie =>{
                                     
                                     return(
-                                        <div className="replies-container">
-                                            <Message key={replie.id} 
+                                        <div className="replies-container" key={replie.id}>
+                                            <Message 
                                                 commentInfo={replie} 
                                                 data={data} 
                                                 replie={true} 
@@ -46,7 +47,7 @@ export default function ChatContainer({data, setScore, deleteComment, createComm
                                     )
                                 })
                             }
-                        </>
+                        </Fragment>
                     )
 
                 }
