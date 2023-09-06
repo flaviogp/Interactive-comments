@@ -7,7 +7,7 @@ export type Comment = {
     content: string,
     createdAt: string,
     score: number,
-    replyingTo: string,
+    replyingTo: string | undefined,
     user: User,
     replies: Comment[]
 }
