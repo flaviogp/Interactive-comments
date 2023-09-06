@@ -55,7 +55,6 @@ export const data = {
                 webp: ramsesmironWebp
               },
               username: "ramsesmiron",
-              replies: [],
             }
           },
           {
@@ -70,7 +69,6 @@ export const data = {
                 webp: juliusomoWebp
               },
               username: "juliusomo",
-              replies: [],
             }
           }
         ]

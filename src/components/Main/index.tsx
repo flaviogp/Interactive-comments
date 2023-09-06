@@ -23,12 +23,12 @@ export default function Main({data}: MainProps){
 
             if(fatherId){
                 const currentComment = newCommentsData.comments.find(comment => comment.id === fatherId)
-                const currentReplie = currentComment?.replies.find(replie => replie.id === commentId);
+                const currentReplie = currentComment?.replies?.find(replie => replie.id === commentId);
                 if(!currentReplie) return;
                 const newReplie = id === 'plus' ?
                         {...currentReplie, score: currentReplie.score+1}:
                         {...currentReplie, score: currentReplie.score > 0 ? currentReplie.score-1 : currentReplie.score}
-                const currentReplieIndex = currentComment?.replies.indexOf(currentReplie)
+                const currentReplieIndex = currentComment?.replies?.indexOf(currentReplie)
                 if(typeof currentReplieIndex === 'undefined') return
                 if(!currentComment || !currentComment.replies) return;
                 currentComment.replies[currentReplieIndex] = newReplie;
@@ -57,7 +57,7 @@ export default function Main({data}: MainProps){
             const currentComment = newData.comments.find(comment => comment.id === id);
             if(currentComment){
                 const currentCommentIndex = newData.comments.indexOf(currentComment)
-                currentComment.replies.push(comment)
+                currentComment.replies?.push(comment)
                 newData.comments[currentCommentIndex] = currentComment
                 setCommentsData({...newData})
                 return;
@@ -85,12 +85,12 @@ export default function Main({data}: MainProps){
             console.log(parentId, id)
             const currentComment = newCommentsData.comments.find(comment => comment.id === parentId);
             if(!currentComment) return;
-            const currentReplie = currentComment.replies.find(comment => comment.id === id);
+            const currentReplie = currentComment.replies?.find(comment => comment.id === id);
             if(!currentReplie) return;
-            const currentReplieIndex =  currentComment.replies.indexOf(currentReplie);
+            const currentReplieIndex =  currentComment.replies?.indexOf(currentReplie);
             if(typeof currentReplieIndex === 'undefined') return;
             const currentCommentIndex =  newCommentsData.comments.indexOf(currentComment);
-            newCommentsData.comments[currentCommentIndex].replies.splice(currentReplieIndex, 1)
+            newCommentsData.comments[currentCommentIndex].replies?.splice(currentReplieIndex, 1)
         }else{
             const currentComment = newCommentsData.comments.find(comment => comment.id === id);
             if(!currentComment) return;
@@ -112,12 +112,13 @@ export default function Main({data}: MainProps){
             setCommentsData({...newData})
         }else{
             const currentComment = newData.comments.filter(comment => comment.replies?.find(replie => replie.id === id))[0]
-            const currentReplie = currentComment.replies.find(replie => replie.id === id)
+            const currentReplie = currentComment.replies?.find(replie => replie.id === id)
             if(!currentReplie) return;
-            const currentReplieIndex = currentComment.replies.indexOf(currentReplie)
+            const currentReplieIndex = currentComment.replies?.indexOf(currentReplie)
             if(typeof currentReplieIndex === 'undefined') return;
             const currentCommentIndex = newData.comments.indexOf(currentComment)
             const newReplie = {...currentReplie, content: content}
+            if(!currentComment.replies) return;
             currentComment.replies[currentReplieIndex] = newReplie;
             newData.comments[currentCommentIndex] = currentComment
             setCommentsData({...newData})

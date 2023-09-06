@@ -9,7 +9,7 @@ export type Comment = {
     score: number,
     replyingTo?: string,
     user: User,
-    replies: Comment[]
+    replies?: Comment[]
 }
 
 
