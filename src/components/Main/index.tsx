@@ -4,7 +4,7 @@ import ChatContainer from "../ChatContainer";
 import ChatFooter from "../ChatFooter";
 
 interface MainProps {
-    data: object
+    data: Data
 }
 export default function Main({data}: MainProps){
     const [commentsData, setCommentsData] = useState<Data>(JSON.parse(localStorage.getItem('data') as string));

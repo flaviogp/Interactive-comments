@@ -3,7 +3,6 @@ import Main from './components/Main';
 
 import {data} from './data/data'
 
-
 function App() {
 
   return (
